@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduLearn</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Navbar -->
+  <nav class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold">EduLearn</h1>
+    <div class="space-x-4">
+      <a href="#home" class="hover:text-blue-600">Home</a>
+      <a href="#courses" class="hover:text-blue-600">Courses</a>
+      <a href="#quizzes" class="hover:text-blue-600">Quizzes</a>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="p-6 text-center">
+    <h2 class="text-3xl font-semibold mb-4">Welcome to EduLearn</h2>
+    <p class="text-lg">Explore course content and test your knowledge with interactive quizzes.</p>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="p-6">
+    <h2 class="text-2xl font-bold mb-4">Available Courses</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="text-xl font-semibold">General Chemistry</h3>
+        <p class="text-sm">Notes and video content on atomic structure, bonding, etc.</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="text-xl font-semibold">Human Anatomy</h3>
+        <p class="text-sm">Lecture slides and diagrams of major systems.</p>
+      </div>
+      <!-- Add more courses as needed -->
+    </div>
+  </section>
+
+  <!-- Quizzes Section -->
+  <section id="quizzes" class="p-6">
+    <h2 class="text-2xl font-bold mb-4">Test Your Knowledge</h2>
+    <div class="bg-white p-4 rounded shadow max-w-md mx-auto">
+      <p class="mb-2">What is the chemical symbol for water?</p>
+      <button onclick="checkAnswer('H2O')" class="block w-full mb-2 bg-blue-100 p-2 rounded hover:bg-blue-200">H2O</button>
+      <button onclick="checkAnswer('CO2')" class="block w-full mb-2 bg-blue-100 p-2 rounded hover:bg-blue-200">CO2</button>
+      <button onclick="checkAnswer('NaCl')" class="block w-full mb-2 bg-blue-100 p-2 rounded hover:bg-blue-200">NaCl</button>
+      <p id="quiz-feedback" class="mt-2 font-semibold"></p>
+    </div>
+  </section>
+
+  <script>
+    function checkAnswer(answer) {
+      const feedback = document.getElementById('quiz-feedback');
+      if (answer === 'H2O') {
+        feedback.textContent = '✅ Correct!';
+        feedback.className = 'text-green-600 mt-2 font-semibold';
+      } else {
+        feedback.textContent = '❌ Try again.';
+        feedback.className = 'text-red-600 mt-2 font-semibold';
+      }
+    }
+  </script>
+</body>
+</html>
+index.html
